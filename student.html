@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Learnexa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background-color: #3b82f6;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+ 
+    <div class="min-h-screen flex flex-col">
+      
+        <nav class="gradient-bg text-white shadow-lg">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <button id="logoutBtn" class="bg-red-600 px-3 py-1 rounded text-sm hover:bg-red-700 transition">Logout</button>
+                    <i class="fas fa-graduation-cap text-3xl"></i>
+                    <span class="text-2xl font-bold">Learnexa</span>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button class="text-white focus:outline-none">
+                            <i class="fas fa-bell text-xl"></i>
+                            <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500"></span>
+                        </button>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center">
+                            <i class="fas fa-user text-blue-600"></i>
+                        </div>
+                        <span class="text-white">Student</span>
+                    </div>
+                </div>
+                <button class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+
+   
+        <div class="flex-1 container mx-auto px-6 py-8">
+        
+            <div class="gradient-bg text-white rounded-xl p-6 mb-8">
+                <h1 id="welcomeText" class="text-2xl font-bold mb-2">Welcome back!</h1>
+                <p class="mb-4">Continue your learning journey with these courses</p>
+                <div class="flex flex-wrap gap-4">
+                    <div class="bg-blue-500 bg-opacity-30 px-4 py-2 rounded-lg">
+                        <span class="font-medium">5</span> Enrolled Courses
+                    </div>
+                    <div class="bg-blue-500 bg-opacity-30 px-4 py-2 rounded-lg">
+                        <span class="font-medium">2</span> Certificates Earned
+                    </div>
+                    <div class="bg-blue-500 bg-opacity-30 px-4 py-2 rounded-lg">
+                        <span class="font-medium">12</span> Learning Hours
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-gray-800">Courses in Progress</h2>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 transition-all">View All</a>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+<div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+    <div class="h-40 bg-blue-100 flex items-center justify-center">
+        <i class="fas fa-code text-6xl text-blue-600"></i>
+    </div>
+    <div class="p-6">
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="text-lg font-semibold text-gray-800">Web Development Fundamentals</h3>
+            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Beginner</span>
+        </div>
+        <p class="text-gray-600 text-sm mb-4">
+            Learn HTML, CSS, and JavaScript to build your first website
+        </p>
+
+        <div class="mb-3">
+                <div class="flex justify-between text-sm text-gray-600 mb-1">
+                <span>Progress</span>
+                         <span id="web-dev-progress">0%</span>
+              </div>
+                 <div class="progress-bar">
+                      <div class="progress-fill" id="web-dev-progress-bar" style="width: 0%"></div>
+              </div>
+           </div>
+
+        <div class="flex justify-between items-center">
+            <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-play-circle mr-1"></i>
+                <span>12 Lessons</span>
+            </div>
+            <a href="course-web-development.html" class="course-action-btn text-blue-600 hover:text-blue-800 text-sm font-medium" data-course-id="web-development">Continue</a>
+        </div>
+    </div>
+</div>
+
+                    
+                
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                        <div class="h-40 bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-mobile-alt text-6xl text-blue-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold text-gray-800">Mobile App Design</h3>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Intermediate</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-4">Design beautiful mobile interfaces with Figma</p>
+                            
+                            <div class="mb-3">
+                                <div class="flex justify-between text-sm text-gray-600 mb-1">
+                                    <span>Progress</span>
+                                    <span id="mobile-design-progress">0%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="mobile-design-progress-bar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-play-circle mr-1"></i>
+                                    <span>8 Lessons</span>
+                                </div>
+                                <a href="course-mobile-app-design.html" class="course-action-btn text-blue-600 hover:text-blue-800 text-sm font-medium" data-course-id="mobile-app-design">Continue</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                  
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                        <div class="h-40 bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-database text-6xl text-blue-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold text-gray-800">Database Management</h3>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Beginner</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-4">Learn SQL and database design principles</p>
+                            
+                            <div class="mb-3">
+                                <div class="flex justify-between text-sm text-gray-600 mb-1">
+                                    <span>Progress</span>
+                                    <span id="database-progress">0%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="database-progress-bar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-play-circle mr-1"></i>
+                                    <span>10 Lessons</span>
+                                </div>
+                                <a href="course-database-management.html" class="course-action-btn text-blue-600 hover:text-blue-800 text-sm font-medium" data-course-id="database-management">Continue</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="mb-12">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-gray-800">Recommended Courses</h2>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 transition-all">Browse All</a>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                        <div class="h-40 bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-6xl text-blue-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold text-gray-800">Data Analysis with Python</h3>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Intermediate</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-4">Analyze and visualize data using Pandas and Matplotlib</p>
+                            
+                            <div class="mb-3">
+                                <div class="flex justify-between text-sm text-gray-600 mb-1">
+                                    <span>Progress</span>
+                                    <span id="data-analysis-progress">Not Started</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="data-analysis-progress-bar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-play-circle mr-1"></i>
+                                    <span>15 Lessons</span>
+                                </div>
+                                <button class="course-action-btn bg-blue-600 text-white px-4 py-1 rounded text-sm hover:bg-blue-700 transition-all" data-course-id="data-analysis-with-python">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                  
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                        <div class="h-40 bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-6xl text-blue-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold text-gray-800">Cybersecurity Essentials</h3>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Beginner</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-4">Learn the fundamentals of keeping systems secure</p>
+                            
+                            <div class="mb-3">
+                                <div class="flex justify-between text-sm text-gray-600 mb-1">
+                                    <span>Progress</span>
+                                    <span id="cybersecurity-progress">Not Started</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="cybersecurity-progress-bar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-play-circle mr-1"></i>
+                                    <span>10 Lessons</span>
+                                </div>
+                                <button class="course-action-btn bg-blue-600 text-white px-4 py-1 rounded text-sm hover:bg-blue-700 transition-all" data-course-id="cybersecurity-essentials">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                        <div class="h-40 bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-robot text-6xl text-blue-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold text-gray-800">Introduction to AI</h3>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Advanced</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-4">Explore the world of artificial intelligence and machine learning</p>
+                            
+                            <div class="mb-3">
+                                <div class="flex justify-between text-sm text-gray-600 mb-1">
+                                    <span>Progress</span>
+                                    <span id="ai-progress">Not Started</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="ai-progress-bar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-play-circle mr-1"></i>
+                                    <span>12 Lessons</span>
+                                </div>
+                                <button class="course-action-btn bg-blue-600 text-white px-4 py-1 rounded text-sm hover:bg-blue-700 transition-all" data-course-id="introduction-to-ai">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-bold text-gray-800 mb-6">Recent Activity</h2>
+                
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-book text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-800">You enrolled in <span class="font-medium">Web Development Fundamentals</span></p>
+                                <p class="text-gray-500 text-sm">2 days ago</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-video text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-800">You watched <span class="font-medium">Introduction to HTML</span> from Web Development Fundamentals</p>
+                                <p class="text-gray-500 text-sm">1 day ago</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-certificate text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-800">You completed <span class="font-medium">Python Basics</span> course</p>
+                                <p class="text-gray-500 text-sm">1 week ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <footer class="bg-gray-800 text-white py-8">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                        <i class="fas fa-graduation-cap text-2xl text-blue-400"></i>
+                        <span class="text-xl font-bold">Learnexa</span>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-all">About</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all">Contact</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all">Privacy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all">Terms</a>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400">
+                    <p>&copy; 2023 Learnexa. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+   
+    <div id="enrollmentModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Enroll in <span id="courseTitle"></span></h3>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="enrollmentForm" class="space-y-4">
+                <div>
+                    <label for="fullName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" id="fullName" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="experience" class="block text-sm font-medium text-gray-700">Experience Level</label>
+                    <select id="experience" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+                <div class="flex justify-end space-x-3">
+                    <button type="button" id="cancelEnrollment" class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        Cancel
+                    </button>
+                    <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">
+                        Enroll Now
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        
+            const user = localStorage.getItem('learnexaUser') || 'Student';
+            document.getElementById('welcomeText').textContent = `Welcome back, ${user}!`;
+
+            
+            const logoutBtn = document.getElementById('logoutBtn');
+            logoutBtn?.addEventListener('click', function () {
+                localStorage.removeItem('learnexaUser');
+                alert('You have been logged out!');
+                window.location.href = 'index.html';
+            });
+
+       
+            const enrollmentModal = document.getElementById('enrollmentModal');
+            const closeModal = document.getElementById('closeModal');
+            const cancelEnrollment = document.getElementById('cancelEnrollment');
+            const enrollmentForm = document.getElementById('enrollmentForm');
+            const courseTitleElement = document.getElementById('courseTitle');
+
+            let currentCourse = null;
+
+            document.querySelectorAll('.course-action-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                 
+                    if (this.tagName === 'A') return;
+                    
+                    e.preventDefault();
+                    const courseCard = this.closest('.bg-white');
+                    currentCourse = {
+                        element: this,
+                        card: courseCard,
+                        title: courseCard.querySelector('h3').textContent,
+                        id: this.getAttribute('data-course-id')
+                    };
+                    
+                   
+                    courseTitleElement.textContent = currentCourse.title;
+                    enrollmentModal.classList.remove('hidden');
+                });
+            });
+
+           
+            closeModal.addEventListener('click', () => enrollmentModal.classList.add('hidden'));
+            cancelEnrollment.addEventListener('click', () => enrollmentModal.classList.add('hidden'));
+
+        
+            enrollmentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+            
+                const formData = {
+                    fullName: document.getElementById('fullName').value,
+                    email: document.getElementById('email').value,
+                    experience: document.getElementById('experience').value,
+                    course: currentCourse.title
+                };
+                
+          
+                if (!formData.fullName || !formData.email) {
+                    alert('Please fill in all required fields');
+                    return;
+                }
+                
+       
+                const enrollments = JSON.parse(localStorage.getItem('courseEnrollments')) || {};
+                enrollments[currentCourse.id] = formData;
+                localStorage.setItem('courseEnrollments', JSON.stringify(enrollments));
+                
+           
+                if (!localStorage.getItem(`courseProgress_${currentCourse.id}`)) {
+                    localStorage.setItem(`courseProgress_${currentCourse.id}`, JSON.stringify({
+                        completedLessons: [],
+                        progressPercentage: 0
+                    }));
+                }
+                
+       
+                currentCourse.element.textContent = 'Continue';
+                currentCourse.element.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                currentCourse.element.classList.add('text-blue-600', 'hover:text-blue-800', 'bg-transparent');
+                
+                const progressText = currentCourse.card.querySelector('.flex.justify-between.text-sm.text-gray-600.mb-1 span:last-child');
+                const progressFill = currentCourse.card.querySelector('.progress-fill');
+                
+                if (progressText) progressText.textContent = '0%';
+                if (progressFill) progressFill.style.width = '0%';
+                
+     
+                enrollmentModal.classList.add('hidden');
+                enrollmentForm.reset();
+                
+         
+                alert(`You have successfully enrolled in "${currentCourse.title}"!`);
+                
+             
+                window.location.href = `course-${currentCourse.id}.html`;
+            });
+
+          
+            function updateCourseProgressFromStorage() {
+                document.querySelectorAll('.bg-white.rounded-lg').forEach(card => {
+                    const courseTitle = card.querySelector('h3').textContent;
+                    const courseId = courseTitle.toLowerCase().replace(/\s+/g, '-');
+                    const progressData = JSON.parse(localStorage.getItem(`courseProgress_${courseId}`));
+                    
+                    if (progressData) {
+                        const progressText = card.querySelector('.flex.justify-between.text-sm.text-gray-600.mb-1 span:last-child');
+                        const progressFill = card.querySelector('.progress-fill');
+                        
+                        if (progressText) progressText.textContent = `${progressData.progressPercentage}%`;
+                        if (progressFill) progressFill.style.width = `${progressData.progressPercentage}%`;
+                    }
+                });
+            }
+
+          
+            window.updateDashboardProgress = function(courseId, percentage) {
+                const courseTitle = courseId.split('-').map(word => 
+                    word.charAt(0).toUpperCase() + word.slice(1)
+                ).join(' ');
+                
+                const cards = document.querySelectorAll('.bg-white.rounded-lg');
+                cards.forEach(card => {
+                    if (card.querySelector('h3').textContent === courseTitle) {
+                        const progressText = card.querySelector('.flex.justify-between.text-sm.text-gray-600.mb-1 span:last-child');
+                        const progressFill = card.querySelector('.progress-fill');
+                        
+                        if (progressText) progressText.textContent = `${percentage}%`;
+                        if (progressFill) progressFill.style.width = `${percentage}%`;
+                        
+                
+                        localStorage.setItem(`courseProgress_${courseId}`, JSON.stringify({
+                            completedLessons: JSON.parse(localStorage.getItem(`courseProgress_${courseId}`))?.completedLessons || [],
+                            progressPercentage: percentage
+                        }));
+                    }
+                });
+            };
+
+          
+            updateCourseProgressFromStorage();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis with Python - Learnexa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+  
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="./student.html" class="text-white hover:text-blue-200 transition-all">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+                <i class="fas fa-graduation-cap text-3xl"></i>
+                <span class="text-2xl font-bold">Learnexa</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center">
+                        <i class="fas fa-user text-blue-600"></i>
+                    </div>
+                    <span class="text-white">Student</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-6 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+        
+            <div class="lg:w-2/3">
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h1 class="text-2xl font-bold text-gray-800 mb-2">Data Analysis with Python</h1>
+                    <div class="flex items-center text-sm text-gray-600 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mr-2">Intermediate</span>
+                        <span><i class="fas fa-play-circle mr-1"></i> 15 Lessons</span>
+                    </div>
+                    
+                
+                    <div class="bg-black rounded-lg mb-6 aspect-video flex items-center justify-center" id="videoPlayer">
+                        <div class="text-white text-center">
+                            <i class="fas fa-play-circle text-5xl mb-2"></i>
+                            <p>Click a lesson to start watching</p>
+                        </div>
+                    </div>
+                    
+                 
+                    <div class="mb-6">
+                        <div class="flex justify-between text-sm text-gray-600 mb-1">
+                            <span>Course Progress</span>
+                            <span id="courseProgressText">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="courseProgressBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                
+                    <div class="prose max-w-none text-gray-700 mb-6">
+                        <p>Master data analysis with Python using Pandas, NumPy, and Matplotlib. Learn to clean, transform, and visualize data to extract meaningful insights from complex datasets.</p>
+                    </div>
+                </div>
+            </div>
+            
+          
+            <div class="lg:w-1/3">
+                <div class="bg-white rounded-lg shadow-md p-6 sticky top-4">
+                    <h2 class="text-lg font-bold text-gray-800 mb-4">Lessons</h2>
+                    <div class="space-y-2" id="lessonsList">
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+     
+            const courseId = 'data-analysis-with-python';
+            const courseData = {
+                title: 'Data Analysis with Python',
+                lessons: [
+                    { id: 1, title: 'Python for Data Science', duration: '18:20' },
+                    { id: 2, title: 'NumPy Fundamentals', duration: '22:45' },
+                    { id: 3, title: 'Pandas DataFrames', duration: '25:30' },
+                    { id: 4, title: 'Data Cleaning Techniques', duration: '28:15' },
+                    { id: 5, title: 'Data Visualization Basics', duration: '20:40' },
+                    { id: 6, title: 'Advanced Pandas Operations', duration: '26:25' },
+                    { id: 7, title: 'Time Series Analysis', duration: '24:50' },
+                    { id: 8, title: 'Statistical Analysis', duration: '22:35' },
+                    { id: 9, title: 'Working with APIs', duration: '19:45' },
+                    { id: 10, title: 'Machine Learning Intro', duration: '30:00' },
+                    { id: 11, title: 'Data Storytelling', duration: '21:20' },
+                    { id: 12, title: 'Optimizing Performance', duration: '18:30' },
+                    { id: 13, title: 'Real-world Case Study', duration: '35:15' },
+                    { id: 14, title: 'Debugging Data Issues', duration: '19:50' },
+                    { id: 15, title: 'Final Project', duration: '45:00' }
+                ]
+            };
+
+           
+            let progress = JSON.parse(localStorage.getItem(`courseProgress_${courseId}`)) || {
+                completedLessons: [],
+                progressPercentage: 0
+            };
+
+           
+            updateProgressUI();
+
+     
+            const lessonsList = document.getElementById('lessonsList');
+            courseData.lessons.forEach(lesson => {
+                const lessonElement = document.createElement('div');
+                lessonElement.className = `p-3 rounded cursor-pointer transition ${progress.completedLessons.includes(lesson.id) ? 'bg-blue-50 text-blue-700' : 'hover:bg-gray-50'}`;
+                lessonElement.dataset.lessonId = lesson.id;
+                lessonElement.innerHTML = `
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <i class="fas ${progress.completedLessons.includes(lesson.id) ? 'fa-check-circle text-green-500' : 'fa-play-circle'} mr-3"></i>
+                            <span>${lesson.title}</span>
+                        </div>
+                        <span class="text-sm text-gray-500">${lesson.duration}</span>
+                    </div>
+                `;
+                
+                lessonElement.addEventListener('click', () => {
+                    playLesson(lesson.id);
+                    updateProgress(lesson.id);
+                });
+                
+                lessonsList.appendChild(lessonElement);
+            });
+
+            function playLesson(lessonId) {
+                const videoPlayer = document.getElementById('videoPlayer');
+                videoPlayer.innerHTML = `
+                    <div class="w-full h-full flex items-center justify-center bg-gray-800 text-white">
+                        <div class="text-center">
+                            <i class="fas fa-play-circle text-5xl mb-2"></i>
+                            <p>Now Playing: ${courseData.lessons.find(l => l.id === lessonId).title}</p>
+                            <p class="text-sm text-gray-400 mt-2">(Video player simulation)</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            function updateProgress(lessonId) {
+                if (!progress.completedLessons.includes(lessonId)) {
+                    progress.completedLessons.push(lessonId);
+                    progress.progressPercentage = Math.round((progress.completedLessons.length / courseData.lessons.length) * 100);
+                    localStorage.setItem(`courseProgress_${courseId}`, JSON.stringify(progress));
+                    
+                    updateProgressUI();
+                    
+                    if (window.opener) {
+                        window.opener.updateDashboardProgress(courseId, progress.progressPercentage);
+                    }
+                }
+            }
+
+            function updateProgressUI() {
+                document.getElementById('courseProgressText').textContent = `${progress.progressPercentage}%`;
+                document.getElementById('courseProgressBar').style.width = `${progress.progressPercentage}%`;
+                
+                courseData.lessons.forEach(lesson => {
+                    const lessonElement = document.querySelector(`[data-lesson-id="${lesson.id}"]`);
+                    if (lessonElement) {
+                        const icon = lessonElement.querySelector('i');
+                        if (progress.completedLessons.includes(lesson.id)) {
+                            icon.className = 'fas fa-check-circle text-green-500 mr-3';
+                            lessonElement.classList.add('bg-blue-50', 'text-blue-700');
+                        } else {
+                            icon.className = 'fas fa-play-circle mr-3';
+                            lessonElement.classList.remove('bg-blue-50', 'text-blue-700');
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

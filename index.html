@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnexa - Online Learning System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+   
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+   
+    <div id="index-page">
+      
+        <nav class="gradient-bg text-white shadow-lg">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-graduation-cap text-3xl"></i>
+                    <span class="text-2xl font-bold">Learnexa</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#login" class="bg-white text-blue-600 px-4 py-2 rounded-md font-medium hover:bg-blue-50 transition-all">Login</a>
+                    <a href="#register" class="border border-white text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700 transition-all">Register</a>
+                </div>
+                
+            </div>
+        </nav>
+
+      
+        <section class="gradient-bg text-white py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-5xl font-bold mb-6">Learn Without Limits</h1>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Advance your career with Learnexa's online courses. Learn from industry experts and gain valuable skills.</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#register" class="bg-white text-blue-600 px-6 py-3 rounded-md font-medium hover:bg-blue-100 transition-all">Get Started</a>
+                    <a href="#" class="border border-white text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-all">Explore Courses</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why Choose Learnexa?</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md card-hover transition-all">
+                        <div class="text-blue-600 mb-4">
+                            <i class="fas fa-laptop text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Flexible Learning</h3>
+                        <p class="text-gray-600">Learn at your own pace, anytime, anywhere. Access courses 24/7 from any device.</p>
+                    </div>
+                    
+           
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md card-hover transition-all">
+                        <div class="text-blue-600 mb-4">
+                            <i class="fas fa-certificate text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Certification</h3>
+                        <p class="text-gray-600">Earn recognized certificates upon course completion to showcase your skills.</p>
+                    </div>
+           
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md card-hover transition-all">
+                        <div class="text-blue-600 mb-4">
+                            <i class="fas fa-chalkboard-teacher text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Expert Instructors</h3>
+                        <p class="text-gray-600">Learn from industry professionals with real-world experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Popular Course Categories</h2>
+                <div class="grid md:grid-cols-4 gap-6">
+            
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover transition-all">
+                        <div class="text-blue-600 mb-4">
+                            <i class="fas fa-code text-3xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-800">Programming</h3>
+                        <p class="text-gray-600 text-sm">Master coding languages and frameworks</p>
+                    </div>
+                    
+              
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover transition-all">
+                        <div class="text-blue-600 mb-4">
+                            <i class="fas fa-chart-line text-3xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-800">Business</h3>
+                        <p class="text-gray-600 text-sm">Develop business and management skills</p>
+                    </div>
+                    
+              
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover transition-all">
+                        <div class="text-blue-600 mb-4">
+                            <i class="fas fa-paint-brush text-3xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-800">Design</h3>
+                        <p class="text-gray-600 text-sm">Learn graphic and UI/UX design</p>
+                    </div>
+                    
+                
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover transition-all">
+                        <div class="text-blue-600 mb-4">
+                            <i class="fas fa-heartbeat text-3xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2 text-gray-800">Health</h3>
+                        <p class="text-gray-600 text-sm">Courses on fitness and nutrition</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">What Our Students Say</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i class="fas fa-user text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Sarah Johnson</h4>
+                                <p class="text-gray-600 text-sm">Web Development Student</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">"The courses on Learnexa helped me transition into a web development career. The instructors are knowledgeable and the platform is easy to use."</p>
+                    </div>
+                    
+           
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                <i class="fas fa-user text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Michael Chen</h4>
+                                <p class="text-gray-600 text-sm">Data Science Student</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">"I was able to learn data science at my own pace while working full-time. The certificate I earned helped me get a promotion at work."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+        <section class="gradient-bg text-white py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-6">Ready to Start Learning?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Join thousands of students advancing their careers with Learnexa.</p>
+                <a href="#register" class="bg-white text-blue-600 px-8 py-3 rounded-md font-medium hover:bg-blue-100 transition-all">Enroll Now</a>
+            </div>
+        </section>
+
+    
+        <footer class="bg-gray-800 text-white py-12">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-4 gap-8">
+                
+                    <div>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <i class="fas fa-graduation-cap text-2xl text-blue-400"></i>
+                            <span class="text-xl font-bold">Learnexa</span>
+                        </div>
+                        <p class="text-gray-400">Empowering learners worldwide with quality online education.</p>
+                    </div>
+                    
+                  
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-all">Home</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-all">Courses</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-all">About Us</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-all">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Support</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-all">FAQ</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-all">Help Center</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-all">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-all">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition-all"><i class="fab fa-facebook-f text-xl"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-all"><i class="fab fa-twitter text-xl"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-all"><i class="fab fa-instagram text-xl"></i></a>
+                           
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-400">Subscribe to our newsletter</p>
+                            <div class="flex mt-2">
+                                <input type="email" placeholder="Your email" class="px-3 py-2 bg-gray-700 text-white rounded-l focus:outline-none w-full">
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded-r hover:bg-blue-700 transition-all">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                    <p>&copy; 2023 Learnexa. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+  
+    <div id="login-page" class="hidden">
+        
+        <nav class="gradient-bg text-white shadow-lg">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-graduation-cap text-3xl"></i>
+                    <span class="text-2xl font-bold">Learnexa</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#index" class="text-white hover:text-blue-200 transition-all">Back to Home</a>
+                </div>
+            </div>
+        </nav>
+
+     
+        <section class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-md w-full space-y-8 bg-white p-10 rounded-lg shadow-xl">
+                <div>
+                    <div class="flex justify-center">
+                        <i class="fas fa-graduation-cap text-5xl text-blue-600"></i>
+                    </div>
+                    <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                        Sign in to your account
+                    </h2>
+                    <p class="mt-2 text-center text-sm text-gray-600">
+                        Or
+                        <a href="#register" class="font-medium text-blue-600 hover:text-blue-500">
+                            create a new account
+                        </a>
+                    </p>
+                </div>
+                <form class="mt-8 space-y-6" id="loginForm">
+                    <input type="hidden" name="remember" value="true">
+                    <div class="rounded-md shadow-sm space-y-4">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-envelope text-gray-400"></i>
+                                </div>
+                                <input id="email" name="email" type="email" autocomplete="email" required
+                                    class="py-2 pl-10 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="you@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-lock text-gray-400"></i>
+                                </div>
+                                <input id="password" name="password" type="password" autocomplete="current-password" required
+                                    class="py-2 pl-10 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input id="remember-me" name="remember-me" type="checkbox"
+                                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="remember-me" class="ml-2 block text-sm text-gray-700">
+                                Remember me
+                            </label>
+                        </div>
+
+                        <div class="text-sm">
+                            <a href="#" class="font-medium text-blue-600 hover:text-blue-500">
+                                Forgot your password?
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit"
+                            class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                                <i class="fas fa-sign-in-alt text-blue-300 group-hover:text-blue-200"></i>
+                            </span>
+                            Sign in
+                        </button>
+                    </div>
+                </form>
+                <div class="text-center mt-4">
+                    <button onclick="window.location.href='admin.html'" class="text-sm text-blue-600 hover:underline">Admin Login</button>
+                </div>
+                
+                <div class="mt-6">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">
+                                Or continue with
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 grid grid-cols-3 gap-3">
+                        <div>
+                            <a href="#"
+                                class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <i class="fab fa-facebook-f text-blue-600"></i>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#"
+                                class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <i class="fab fa-google text-red-600"></i>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#"
+                                class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <i class="fab fa-linkedin-in text-blue-500"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+  
+    <div id="register-page" class="hidden">
+             <nav class="gradient-bg text-white shadow-lg">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-graduation-cap text-3xl"></i>
+                    <span class="text-2xl font-bold">Learnexa</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#index" class="text-white hover:text-blue-200 transition-all">Back to Home</a>
+                </div>
+            </div>
+        </nav>
+
+       
+        <section class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-md w-full space-y-8 bg-white p-10 rounded-lg shadow-xl">
+                <div>
+                    <div class="flex justify-center">
+                        <i class="fas fa-user-plus text-5xl text-blue-600"></i>
+                    </div>
+                    <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                        Create a new account
+                    </h2>
+                    <p class="mt-2 text-center text-sm text-gray-600">
+                        Or
+                        <a href="#login" class="font-medium text-blue-600 hover:text-blue-500">
+                            sign in to existing account
+                        </a>
+                    </p>
+                </div>
+                <form class="mt-8 space-y-6" id="registerForm">
+                    <div class="rounded-md shadow-sm space-y-4">
+                        <div>
+                            <label for="full-name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-user text-gray-400"></i>
+                                </div>
+                                <input id="full-name" name="full-name" type="text" autocomplete="name" required
+                                    class="py-2 pl-10 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="John Doe">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="reg-email" class="block text-sm font-medium text-gray-700">Email address</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-envelope text-gray-400"></i>
+                                </div>
+                                <input id="reg-email" name="reg-email" type="email" autocomplete="email" required
+                                    class="py-2 pl-10 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="you@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="reg-password" class="block text-sm font-medium text-gray-700">Password</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-lock text-gray-400"></i>
+                                </div>
+                                <input id="reg-password" name="reg-password" type="password" autocomplete="new-password" required
+                                    class="py-2 pl-10 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="Password">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-lock text-gray-400"></i>
+                                </div>
+                                <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" required
+                                    class="py-2 pl-10 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="Confirm Password">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="user-type" class="block text-sm font-medium text-gray-700">I am a</label>
+                            <select id="user-type" name="user-type" required
+                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                <option value="" disabled selected>Select user type</option>
+                                <option value="student">Student</option>
+                                <option value="instructor">Instructor</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input id="terms" name="terms" type="checkbox" required
+                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="terms" class="ml-2 block text-sm text-gray-700">
+                            I agree to the <a href="#" class="text-blue-600 hover:text-blue-500">Terms of Service</a> and <a href="#" class="text-blue-600 hover:text-blue-500">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <div>
+                        <button type="submit"
+                            class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                                <i class="fas fa-user-plus text-blue-300 group-hover:text-blue-200"></i>
+                            </span>
+                            Register
+                        </button>
+                    </div>
+                </form>
+                <div class="text-center mt-4">
+                    <button onclick="window.location.href='admin.html'" class="text-sm text-blue-600 hover:underline">Admin Login</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function showPage() {
+                const hash = window.location.hash || '#index';
+    
+                document.getElementById('index-page').classList.add('hidden');
+                document.getElementById('login-page').classList.add('hidden');
+                document.getElementById('register-page').classList.add('hidden');
+    
+                if (hash === '#login') {
+                    document.getElementById('login-page').classList.remove('hidden');
+                } else if (hash === '#register') {
+                    document.getElementById('register-page').classList.remove('hidden');
+                } else {
+                    document.getElementById('index-page').classList.remove('hidden');
+                }
+            }
+    
+      
+            showPage();
+    
+       
+            window.addEventListener('hashchange', showPage);
+    
+          
+            document.getElementById('loginForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+    
+                const email = document.getElementById('email').value;
+    
+             
+                if (email.includes('instructor')) {
+                    window.location.href = 'instructor.html';
+                } else {
+                    window.location.href = '#index'; 
+                }
+            });
+    
+        
+            document.getElementById('registerForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+    
+                const userType = document.getElementById('user-type').value;
+    
+                if (userType === 'instructor') {
+                    window.location.href = 'instructor.html';
+                } 
+                if (userType === 'student') {
+                    window.location.href = 'student.html ';
+                }
+                else {
+                    window.location.href = '#index';
+                }
+            });
+        });
+    </script>
+    
+    
+</body>
+</html>
